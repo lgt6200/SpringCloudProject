@@ -1,0 +1,38 @@
+server:
+  port: 9501
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://admin:enjoy@localhost:7001/eureka
+  instance:
+    instance-id: microcloud-zuul-gateway
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+spring:
+  application:
+    name:  microcloud-zuul-gateway
+  security:
+    user:
+      name: admin
+      password: enjoy
+#zuul不同的访问模式
+#zuul:
+  #routes:
+    #microcloud-provider-users:  /users-proxy/** #既然是使用代理，那么代理的功能就是不能让用户看到真实的操作，屏蔽真实的调用地址，这个时候就需要自己增加zuul的路由规则配置了。
+  #ignored-services:
+   # "*"  #排除用服务名访问服务
+zuul:
+  routes:
+    users:
+      path: /users-proxy/**
+      serviceId: microcloud-provider-users
+    users2:  #不需要eureka
+      path: /users2-proxy/**
+      url: http://localhost:8090/
+    product:
+      path: /product-proxy/**
+      serviceId: microcloud-provider-product
+  ignored-services:
+    "*"
+  prefix: /enjoy-api  #添加前缀

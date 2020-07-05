@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microcloud-provider-product-hystrix" />
+        <module name="microcloud-provider-product3" />
+        <module name="microcloud-consumer-hystrix" />
+        <module name="microcloud-provider-product" />
+        <module name="microcloud-consumer-feign" />
+        <module name="microcloud-provider-product4" />
+        <module name="microcloud-api" />
+        <module name="microcloud-zuul-gateway" />
+        <module name="microcloud-consumer-hystrix-dashboard" />
+        <module name="microcloud-security" />
+        <module name="microcloud-consumer-ribbon" />
+        <module name="microcloud-service" />
+        <module name="microcloud-consumer" />
+        <module name="microcloud-consumer-turbine" />
+        <module name="microcloud-eureka" />
+        <module name="microcloud-provider-user-hystrix" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microcloud-provider-product (1)" target="1.8" />
+      <module name="microcloud-provider-product (2)" target="1.8" />
+      <module name="microcloud-provider-product2" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
